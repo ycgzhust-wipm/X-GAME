@@ -1,0 +1,21 @@
+rtf @/opt/xplor/xplor-nih-2.53/toppar/topallhdg_new.pro end
+
+parameter @/opt/xplor/xplor-nih-2.53/toppar/parallhdg_new.pro end
+
+
+segment
+   name=" "
+   SETUP=TRUE
+   chain
+      @/opt/xplor/xplor-nih-2.53/toppar/toph11.pep
+
+coor @e2.pdb
+end
+end
+end
+
+delete select (name OT1 or name OT2) end
+
+write psf output=e2.psf end
+
+stop

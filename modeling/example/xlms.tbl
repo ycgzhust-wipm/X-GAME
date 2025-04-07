@@ -1,0 +1,3 @@
+echo assign ( segid ALT0 and resid 8 and name ca) (segid BLT0 and resi 48 and name ca) 14.0 10.0 8.0
+echo assign ( segid ALT0 and resid 72 and name ca) (segid BLT0 and resi 6 and name ca) 14.0 10.0 8.0
+echo assign ( segid ALT0 and resid 92 and name ca) (segid BLT0 and resi 6 and name ca) 14.0 10.0 8.0

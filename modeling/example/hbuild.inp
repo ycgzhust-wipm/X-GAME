@@ -1,0 +1,24 @@
+rtf @/opt/xplor/xplor-nih-2.53/toppar/topallhdg_new.pro
+end
+
+parameter @/opt/xplor/xplor-nih-2.53/toppar/parallhdg_new.pro
+end
+
+
+structure @e2.psf end
+
+coor @e2.pdb
+
+delete  select (name H*) end
+
+
+hbuild select=(name H*) phistep=360 end
+hbuild select=(name H*) phistep=5 end
+
+flags exclude * include bonds angle impr end !
+constraint fix (not name H*) end
+mini powell nstep 1000 end
+
+write coor output=e2_H.pdb end
+write psf output=e2_H.psf end
+stop
