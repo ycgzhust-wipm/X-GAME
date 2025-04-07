@@ -1,0 +1,63 @@
+
+1) inter-plddt.py
+
+This script is used to extract the pLDDT values of cross-linking sites (CA atoms) from PDB complex structures predicted by AlphaFold2.
+
+### Input
+
+The input file, xlms.dat, contains four columns of information:
+
+UniProt ID of protein A
+UniProt ID of protein B
+Site on protein A
+Site on protein B
+
+### Running the Program
+To run the program, use the following command:
+
+python3 inter-plddt.py
+
+The program will use the information from xlms.dat to calculate the pLDDT values for the corresponding PDB files in the current directory, and output the results to a file named output-plddt.txt. 
+The PDB files should follow the naming format proteinA_proteinB_1.pdb, where proteinA and proteinB are the UniProt IDs of the respective proteins. 
+By default, the first model from the AlphaFold2 output is used.
+
+### Output
+
+The output file will contain six columns of information:
+
+The first four columns will match the input file (xlms.dat).
+The fifth and sixth columns will contain the pLDDT values for the sites listed in the third and fourth columns.
+If an amino acid cannot be found in the PDB structure or the corresponding PDB file is missing, “NA” will be output for that position.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+2) inter-distance.py
+
+This script is used to calculate the distances between inter-molecular cross-linking sites (CA atoms) from PDB complex structures predicted by AlphaFold2.
+
+### Input
+
+The input file, xlms.dat, contains four columns of information:
+
+UniProt ID of protein A
+UniProt ID of protein B
+Site on protein A
+Site on protein B
+
+### Running the Program
+To run the program, use the following command:
+
+python3 inter-distance.py
+
+The program will use the information from xlms.dat to calculate the distances for the corresponding PDB files in the current directory, and output the results to a file named output-distance.txt.
+The PDB files should follow the naming format proteinA_proteinB_x.pdb, where proteinA and proteinB are the UniProt IDs of the respective proteins.
+Since AlphaFold2 typically outputs five models, 'x' represents the model number, ranging from 1 to 5.
+
+### Output
+
+The output file will contain nine columns of information:
+
+The first four columns will match the input file (xlms.dat).
+Columns five to nine represent the distances between the corresponding sites across different models.
+If an amino acid cannot be found in the PDB structure or the corresponding PDB file is missing, '0.00' will be output for that position.
+
